@@ -647,14 +647,10 @@ public class HTTPProxy extends HttpServlet {
     private void handleStandard(EntityEnclosingMethod methodProxyRequest,
             HttpServletRequest httpServletRequest) throws IOException {
 		  try {
-		      
-			  InputStream is =httpServletRequest.getInputStream();
-			 
-		      methodProxyRequest.setRequestEntity(new InputStreamRequestEntity(httpServletRequest.getInputStream()));
+
+			  methodProxyRequest.setRequestEntity(new InputStreamRequestEntity(httpServletRequest.getInputStream()));
 		      //LOGGER.info("original request content length:" + httpServletRequest.getContentLength());
-		      //LOGGER.info("proxied request content length:" +methodProxyRequest.getRequestEntity().getContentLength()+"");
-		      
-		      
+		      //LOGGER.info("proxied request content length:" +methodProxyRequest.getRequestEntity().getContentLength()+"");		      
 		       
 		  } catch (IOException e) {
 		      throw new IOException(e);
