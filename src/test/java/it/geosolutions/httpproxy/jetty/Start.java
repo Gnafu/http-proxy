@@ -27,7 +27,7 @@ import org.mortbay.jetty.Connector;
 import org.mortbay.jetty.Server;
 import org.mortbay.jetty.bio.SocketConnector;
 import org.mortbay.jetty.webapp.WebAppContext;
-import org.mortbay.thread.BoundedThreadPool;
+import org.mortbay.thread.QueuedThreadPool;
 
 /**
  * Start class for test using JETTY server.
@@ -53,7 +53,7 @@ public class Start {
             // and memory capacities.
             // /////////////////////////////////////////////////////
 
-            BoundedThreadPool tp = new BoundedThreadPool();
+            QueuedThreadPool tp = new QueuedThreadPool();
             tp.setMaxThreads(50);
 
             SocketConnector conn = new SocketConnector();
